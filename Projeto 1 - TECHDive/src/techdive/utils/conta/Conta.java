@@ -149,9 +149,9 @@ public class Conta extends Investimento {
 
     // Método Saldo
 
-    public void saldo(Conta saldo) {
+    public void saldo() {
         System.out.println("Seu saldo é de R$ " +
-                new DecimalFormat("#,##0.##").format(saldo.getSaldo()));
+                new DecimalFormat("#,##0.##").format(getSaldo()));
     }
 
    // chequeEspecial(Conta cheque, double valor)
@@ -213,7 +213,7 @@ public class Conta extends Investimento {
         if(matcher.matches() & transferir.getChaveCPFCNPJ().length() == 14 & !sabado & !domingo &
                 !Objects.equals(transferir.getCPF(), transferir.getChaveCPFCNPJ())) {
             System.out.println("O CPF " + cpfCNPValido + " é válido");
-            transferir.saldo(transferir);
+            transferir.saldo();
             System.out.print("Digite o valor para transferir para o CPF " + cpfCNPValido + ": R$ ");
             Scanner valorEntradaCPF = new Scanner(System.in);
             transferir.setValorEnviarCPF(valorEntradaCPF.nextDouble());
@@ -223,14 +223,14 @@ public class Conta extends Investimento {
                         " - Transferido dia " + dataFormatada.format(LocalDateTime.now());
                 System.out.println(hitoricoTransferCPF);
                 transferir.saque(transferir, transferir.getValorEnviarCPF());
-                transferir.saldo(transferir);
+                transferir.saldo();
             }else {
                 System.out.println(notificaSaldo);
             }
 
         }else if(matcher.matches() & transferir.getChaveCPFCNPJ().length() == 18 & !sabado & !domingo) {
             System.out.println("O CNPJ " + cpfCNPValido + " é válido");
-            transferir.saldo(transferir);
+            transferir.saldo();
             System.out.print("Digite o valor para transferir para o CNPJ " + cpfCNPValido + ": R$ ");
             Scanner valorEntradaCNPJ = new Scanner(System.in);
             transferir.setValorEnviarCNPJ(valorEntradaCNPJ.nextDouble());
@@ -241,7 +241,7 @@ public class Conta extends Investimento {
                 System.out.println(historicoTransferCNPJ);
 
                 transferir.saque(transferir, transferir.getValorEnviarCNPJ());
-                transferir.saldo(transferir);
+                transferir.saldo();
             }else {
                 System.out.println(notificaSaldo);
             }

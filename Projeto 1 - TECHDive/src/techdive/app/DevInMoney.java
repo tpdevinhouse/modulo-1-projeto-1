@@ -68,7 +68,6 @@ public class DevInMoney {
                 menu:
                 System.out.println("\nOlá " + conta.getNome() + ", bem vindo ao menu do DevInMoney!");
                 System.out.println("Escolhe uma das opções abaixo:");
-                conta.setSaldo(0.0);
 
                 menu:
                 if (true) {
@@ -97,9 +96,8 @@ public class DevInMoney {
                         Double valorDeposito = entrada.nextDouble();
                         System.out.println("Valor depósitado R$ " + valorDeposito);
                         conta.depositar(conta, valorDeposito);
-                        conta.setSaldo(valorDeposito);
                         System.out.println("Depósito realizada com sucesso!");
-                        conta.saldo(conta);
+                        conta.saldo();
                         break menu;
 
                     }
@@ -109,7 +107,7 @@ public class DevInMoney {
                     if (escolhaMenu == 2) {
 
                         System.out.println("Você escolheu o menu de saldo");
-                        conta.saldo(conta);
+                        conta.saldo();
                         conta.chequeEspecial(conta, rendaMensal);
                         break menu;
 
@@ -124,7 +122,7 @@ public class DevInMoney {
                         System.out.println("Valor sacado R$ " + valorSaque);
                         conta.saque(conta, valorSaque);
                         System.out.println("Saque realizado com sucesso!");
-                        conta.saldo(conta);
+                        conta.saldo();
                         break menu;
 
                     }

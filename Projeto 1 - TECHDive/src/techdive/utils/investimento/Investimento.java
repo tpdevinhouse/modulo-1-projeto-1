@@ -113,7 +113,7 @@ public class Investimento extends Poupanca{
         int j = 0;
 
         System.out.println("Você escolheu o investimento " + fundoImobiliario);
-        investFundo.saldo(investFundo);
+        investFundo.saldo();
         System.out.print("Digite o valor a ser investido no " + fundoImobiliario + ": R$ ");
         valor = entradaInvestimento.nextDouble();
         investFundo.saque(investFundo, valor);
@@ -142,7 +142,7 @@ public class Investimento extends Poupanca{
 
         System.out.println("Você obteve um lucro de R$ " + investFundo.getValorRentavelFundos());
         investFundo.setSaldo(investFundo.getSaldo() + investFundo.getValorRentavelFundos());
-        investFundo.saldo(investFundo);
+        investFundo.saldo();
     }
 
 
@@ -160,7 +160,7 @@ public class Investimento extends Poupanca{
         int j = 0;
 
         System.out.println("Você escolheu o investimento " + cripto);
-        investCripto.saldo(investCripto);
+        investCripto.saldo();
         System.out.print("Digite o valor a ser investido no " + cripto + ": R$ ");
         valorCripto = entradaInvestCripto.nextDouble();
         investCripto.saque(investCripto, valorCripto);
@@ -194,7 +194,7 @@ public class Investimento extends Poupanca{
         System.out.println("Você obteve um lucro de R$ " +
                 new DecimalFormat("#,##0.##").format(investCripto.getValorInvestimentoCripto()));
         investCripto.setSaldo(investCripto.getSaldo() + investCripto.getValorInvestimentoCripto());
-        investCripto.saldo(investCripto);
+        investCripto.saldo();
 
     }
 
@@ -212,7 +212,7 @@ public class Investimento extends Poupanca{
         int j = 0;
 
         System.out.println("Você escolheu o investimento " + bolsaValores);
-        investBolsa.saldo(investBolsa);
+        investBolsa.saldo();
         System.out.print("Digite o valor a ser investido no " + bolsaValores + ": R$ ");
         valorBolsa = entradaInvestBolsa.nextDouble();
         investBolsa.saque(investBolsa, valorBolsa);
@@ -244,7 +244,7 @@ public class Investimento extends Poupanca{
         System.out.println("Você obteve um lucro de R$ " +
                 new DecimalFormat("#,##0.##").format(investBolsa.getValorInvestimentoBolsa()));
         investBolsa.setSaldo(investBolsa.getSaldo() + investBolsa.getValorInvestimentoBolsa());
-        investBolsa.saldo(investBolsa);
+        investBolsa.saldo();
 
     }
 

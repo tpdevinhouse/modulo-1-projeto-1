@@ -39,7 +39,7 @@ public class Poupanca {
         int j = 0;
 
         System.out.println("Você escolheu o investimento Poupança");
-        investPoupanca.saldo(investPoupanca);
+        investPoupanca.saldo();
         System.out.print("Digite o valor a ser investido na Poupança: R$  ");
         valorPoupanca = entradaInvestPoupanca.nextDouble();
         investPoupanca.saque(investPoupanca, valorPoupanca);
@@ -73,7 +73,7 @@ public class Poupanca {
         System.out.println("Você obteve um lucro de R$ " +
                 new DecimalFormat("#,##0.##").format(investPoupanca.getValorInvestimento()));
         investPoupanca.setSaldo(investPoupanca.getSaldo() + investPoupanca.getValorInvestimento());
-        investPoupanca.saldo(investPoupanca);
+        investPoupanca.saldo();
 
     }
 
